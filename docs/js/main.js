@@ -3,6 +3,7 @@ let nbrpkmn=document.querySelector("input.nbrpkmn").getAttribute("value")
 let buttonNext=document.querySelector("button.NextBouton")
 let buttonPrevious=document.querySelector("button.PreviousBouton")
 let buttonShiny =document.querySelector("button.ShinyBouton")
+let affichageNombre=document.querySelector("p.nbrpkmn")
 let affichageNomFr =document.querySelector("p.NomFr")
 let affichageNomEn =document.querySelector("p.NomEn")
 let affichageNomJp =document.querySelector("p.NomJp")
@@ -23,14 +24,18 @@ async function getData(nbrpkmn) {
         }
 
         const json = await response.json();
-
+        
         nompkmnjap=json.name.jp
         nompkmnen=json.name.en.toLowerCase();
         nompkmnfr=json.name.fr
-        imgpkmn.src="https://projectpokemon.org/images/"+`${shiny}`+"-sprite/"+`${nompkmnen}`+".gif"
+        if(nbrpkmn==83){
+            nompkmnen='farfetchd'
+        }
+        imgpkmn.src='https://projectpokemon.org/images/'+`${shiny}`+'-sprite/'+`${nompkmnen}`+".gif"
         nompkmnen=json.name.en;
         imgpkmn.setAttribute("alt",`${nompkmn}`)
 
+        affichageNombre.textContent="Numéro : "+`${nbrpkmn}`
         affichageNomFr.textContent="Nom (fr) : "+`${nompkmnen}`
         affichageNomEn.textContent="Nom (en) : "+`${nompkmnfr}`
         affichageNomJp.textContent="Nom (jp) : "+`${nompkmnjap}`
