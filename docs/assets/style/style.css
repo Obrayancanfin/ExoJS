@@ -1,81 +1,108 @@
-body{
-    background-image: url("../../assets/img/background.jpg");
-    background-size: cover;
-}
 
-
-div.logo{
+div.background {
     position: absolute;
-    left: 54%;
-    top:3%;
+    background-image: url("../../assets/img/background.jpg");
+    background-size: 100% 100%;
+    width:100dvw;
+    height: 100vh;
+    z-index: 5;
+    top:0;
+    left: 0;
 }
-img.logo{
-    width: 60%;
-}
-img.pokedex{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+div.content {
+    position: absolute;
     width: 34%;
+    height: 98%;
+    left: 33%;
+    top: 1%;
+    z-index: 5;
+    background-image: url("../../assets/img/pokedex.png");
+    background-size: 100% 100%;
     border: solid black 4px;
     border-radius: 50px;
 }
 
-div.contente{
-    width: 25.4%;
+div.logo {
+    position: absolute;
+    left: 54%;
+    top: 3%;
+}
+
+img.logo {
+    width: 60%;
+}
+
+img.pokedex {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid black 4px;
+    border-radius: 50px;
+}
+
+div.pkmnInfo {
+    width: 75%;
     height: 27%;
-    background: transparent;
     position: absolute;
     top: 28.8%;
-    left: 36.9%;
+    left: 11%;
     border-radius: 22px;
 }
 
-img.pokemon{
-    position:absolute;
+img.pokemon {
+    position: absolute;
     width: 30%;
     aspect-ratio: 1;
-    top:13%;
+    top: 13%;
     left: 8%;
 }
 
-button.NextBouton,button.PreviousBouton{
+button.NextBouton,
+button.PreviousBouton {
     position: absolute;
     background: transparent;
-    left: 91%;
-    top: 145%;
+    left: 93%;
+    top: 160%;
     width: 12%;
     height: 16%;
     border: none;
-    font-size:0;
+    font-size: 0;
+    border-radius:0 50% 50% 0  ;
 }
 
-button.PreviousBouton{
-    left: 73%;
+button.PreviousBouton {
+    left: 71.1%;
+    border-radius:50% 0 0 50% ;
 }
 
-p{
+p.nbrpkmn{
+    padding-top: 5%;
+}
+
+p {
     padding-left: 45%;
+    margin-top: 0;
 }
 
 p img {
-
     width: 10%;
 }
 
-button.ShinyBouton{
+button.ShinyBouton {
     position: absolute;
     background: transparent;
     left: 84%;
-    top: 125%;
+    top: 138%;
     width: 8%;
-    height: 58%;
+    height: 60%;
     z-index: 1;
     border: none;
-    font-size:0;
+    font-size: 0;
+    
 }
 
-img.Github{
+img.Github {
     position: absolute;
     left: 0;
     bottom: 0;
