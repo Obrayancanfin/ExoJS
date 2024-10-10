@@ -5,6 +5,7 @@ let buttonPrevious=document.querySelector("button.PreviousBouton")
 let affichageNom =document.querySelector("p.Nom")
 let affichageType =document.querySelector("p.Type")
 let nompkmn ;
+let nompkmnjap ;
 let typeNom;
 let imageType;
 async function getData(nbrpkmn) {
@@ -16,7 +17,8 @@ async function getData(nbrpkmn) {
         }
         const json = await response.json();
 
-        // nompkmn=encodeURIComponent(json.name.jap)
+        nompkmnjap=json.name.jp
+        console.log(nompkmnjap)
 
         nompkmn=json.name.en.toLowerCase();
         imgpkmn.src="https://projectpokemon.org/images/normal-sprite/"+`${nompkmn}`+".gif"
