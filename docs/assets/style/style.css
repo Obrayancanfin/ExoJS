@@ -43,10 +43,10 @@ button.NextBouton,button.PreviousBouton{
     position: absolute;
     background: transparent;
     left: 91%;
-    top: 150%;
+    top: 145%;
     width: 12%;
     height: 16%;
-    border: none !important;
+    border: none;
     font-size:0;
 }
 
@@ -61,4 +61,15 @@ p{
 p img {
 
     width: 10%;
+}
+
+button.ShinyBouton{
+    position: absolute;
+    background: transparent;
+    left: 84%;
+    top: 125%;
+    width: 8%;
+    height: 58%;
+    z-index: 1;
+
 }

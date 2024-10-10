@@ -2,6 +2,7 @@ let imgpkmn= document.querySelector("img.pokemon")
 let nbrpkmn=document.querySelector("input.nbrpkmn").getAttribute("value")
 let buttonNext=document.querySelector("button.NextBouton")
 let buttonPrevious=document.querySelector("button.PreviousBouton")
+let buttonShiny =document.querySelector("button.ShinyBouton")
 let affichageNomFr =document.querySelector("p.NomFr")
 let affichageNomEn =document.querySelector("p.NomEn")
 let affichageNomJp =document.querySelector("p.NomJp")
@@ -9,7 +10,8 @@ let affichageType =document.querySelector("p.Type")
 let nompkmn ;
 let nompkmnen ;
 let nompkmnjap ;
-
+let isShiny=true
+let shiny='normal'
 let typeNom;
 let imageType;
 async function getData(nbrpkmn) {
@@ -25,7 +27,7 @@ async function getData(nbrpkmn) {
         nompkmnjap=json.name.jp
         nompkmnen=json.name.en.toLowerCase();
         nompkmnfr=json.name.fr
-        imgpkmn.src="https://projectpokemon.org/images/normal-sprite/"+`${nompkmnen}`+".gif"
+        imgpkmn.src="https://projectpokemon.org/images/"+`${shiny}`+"-sprite/"+`${nompkmnen}`+".gif"
         nompkmnen=json.name.en;
         imgpkmn.setAttribute("alt",`${nompkmn}`)
 
@@ -67,4 +69,14 @@ buttonPrevious.addEventListener("click",()=>{
 
         getData(nbrpkmn)
     }
+
+})
+
+
+buttonShiny.addEventListener("click",()=> {
+    (isShiny)? shiny="normal": shiny="shiny"
+    isShiny=!isShiny
+    console.log(shiny)
+
+    getData(nbrpkmn)
 })
