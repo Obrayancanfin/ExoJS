@@ -30,8 +30,8 @@ async function getData(nbrpkmn) {
         imgpkmn.setAttribute("alt",`${nompkmn}`)
 
         affichageNomFr.textContent="Nom (fr) : "+`${nompkmnen}`
-        affichageNomEn.textContent="Nom (fr) : "+`${nompkmnfr}`
-        affichageNomJp.textContent="Nom (fr) : "+`${nompkmnjap}`
+        affichageNomEn.textContent="Nom (en) : "+`${nompkmnfr}`
+        affichageNomJp.textContent="Nom (jp) : "+`${nompkmnjap}`
 
         affichageType.innerHTML = `Type : `
         for (const type of json.types) {
