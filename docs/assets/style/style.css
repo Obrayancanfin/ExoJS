@@ -74,3 +74,9 @@ button.ShinyBouton{
     border: none;
     font-size:0;
 }
+
+img.Github{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
