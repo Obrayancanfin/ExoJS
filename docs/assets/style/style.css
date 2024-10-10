@@ -71,5 +71,6 @@ button.ShinyBouton{
     width: 8%;
     height: 58%;
     z-index: 1;
-
+    border: none;
+    font-size:0;
 }
