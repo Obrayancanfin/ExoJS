@@ -15,19 +15,16 @@ async function getData(nbrpkmn) {
             throw new Error(`Response status: ${response.status}`);
         }
         const json = await response.json();
-
+        nompkmn=json.name.en.toLowerCase();
         imgpkmn.src="https://projectpokemon.org/images/normal-sprite/"+`${nompkmn}`+".gif"
-        nompkmn=encodeURIComponent(json.name.jap)
-
-        // nompkmn=json.name.en.toLowerCase();
-        
+        nompkmn=json.name.fr
         imgpkmn.setAttribute("alt",`${nompkmn}`)
         affichageNom.textContent="Nom : "+`${nompkmn}`
         affichageType.innerHTML = `Type : `
         for (const type of json.types) {
         imageType=type.image
         typeNom=type.name
-        affichageType.innerHTML +=`<img src="${imageType}" alt="${typeNom}"> ${typeNom} `
+        affichageType.innerHTML +=`<img src="${imageType}" alt="${typeNom}"> ${typeNom}`
         }
         affichageType.innerHTML +=`</p>`
     } catch (error) {
@@ -43,7 +40,7 @@ buttonNext.addEventListener("click",()=>{
     }else {
         buttonNext.removeAttribute("disabled");
         nbrpkmn++
-
+        console.log(nbrpkmn)
         getData(nbrpkmn)
     }
 })
@@ -54,7 +51,7 @@ buttonPrevious.addEventListener("click",()=>{
     }else {
         buttonPrevious.removeAttribute("disabled");
         nbrpkmn--
-
+        console.log(nbrpkmn)
         getData(nbrpkmn)
     }
 })

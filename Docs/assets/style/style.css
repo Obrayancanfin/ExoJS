@@ -24,7 +24,8 @@ img.pokedex{
 div.contente{
     width: 25.4%;
     height: 27%;
-    background: transparent;
+    background: rgb(81,81,83);
+    background: linear-gradient(90deg, rgb(86, 86, 87) 0%, rgba(154,159,159,1) 100%);
     position: absolute;
     top: 28.8%;
     left: 36.9%;
@@ -43,7 +44,7 @@ button.NextBouton,button.PreviousBouton{
     position: absolute;
     background: transparent;
     left: 91%;
-    top: 150%;
+    top: 160%;
     width: 12%;
     height: 16%;
     border: none !important;
@@ -59,6 +60,5 @@ p.Nom,p.Type{
 }
 
 p img {
-
     width: 10%;
 }
