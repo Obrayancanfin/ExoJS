@@ -2,10 +2,14 @@ let imgpkmn= document.querySelector("img.pokemon")
 let nbrpkmn=document.querySelector("input.nbrpkmn").getAttribute("value")
 let buttonNext=document.querySelector("button.NextBouton")
 let buttonPrevious=document.querySelector("button.PreviousBouton")
-let affichageNom =document.querySelector("p.Nom")
+let affichageNomFr =document.querySelector("p.NomFr")
+let affichageNomEn =document.querySelector("p.NomEn")
+let affichageNomJp =document.querySelector("p.NomJp")
 let affichageType =document.querySelector("p.Type")
 let nompkmn ;
+let nompkmnen ;
 let nompkmnjap ;
+
 let typeNom;
 let imageType;
 async function getData(nbrpkmn) {
@@ -15,16 +19,20 @@ async function getData(nbrpkmn) {
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
+
         const json = await response.json();
 
         nompkmnjap=json.name.jp
-        console.log(nompkmnjap)
-
-        nompkmn=json.name.en.toLowerCase();
-        imgpkmn.src="https://projectpokemon.org/images/normal-sprite/"+`${nompkmn}`+".gif"
-
+        nompkmnen=json.name.en.toLowerCase();
+        nompkmnfr=json.name.fr
+        imgpkmn.src="https://projectpokemon.org/images/normal-sprite/"+`${nompkmnen}`+".gif"
+        nompkmnen=json.name.en;
         imgpkmn.setAttribute("alt",`${nompkmn}`)
-        affichageNom.textContent="Nom : "+`${nompkmn}`
+
+        affichageNomFr.textContent="Nom (fr) : "+`${nompkmnen}`
+        affichageNomEn.textContent="Nom (fr) : "+`${nompkmnfr}`
+        affichageNomJp.textContent="Nom (fr) : "+`${nompkmnjap}`
+
         affichageType.innerHTML = `Type : `
         for (const type of json.types) {
         imageType=type.image
