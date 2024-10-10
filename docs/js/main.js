@@ -16,11 +16,11 @@ async function getData(nbrpkmn) {
         }
         const json = await response.json();
 
-        imgpkmn.src="https://projectpokemon.org/images/normal-sprite/"+`${nompkmn}`+".gif"
-        nompkmn=encodeURIComponent(json.name.jap)
+        // nompkmn=encodeURIComponent(json.name.jap)
 
-        // nompkmn=json.name.en.toLowerCase();
-        
+        nompkmn=json.name.en.toLowerCase();
+        imgpkmn.src="https://projectpokemon.org/images/normal-sprite/"+`${nompkmn}`+".gif"
+
         imgpkmn.setAttribute("alt",`${nompkmn}`)
         affichageNom.textContent="Nom : "+`${nompkmn}`
         affichageType.innerHTML = `Type : `
