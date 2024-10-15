@@ -18,7 +18,7 @@ img.pokedex{
     margin-right: auto;
     width: 34%;
     border: solid black 4px;
-    border-radius: 50px;
+    border-radius: 20%;
 }
 
 div.contente{
@@ -28,7 +28,7 @@ div.contente{
     position: absolute;
     top: 28.8%;
     left: 36.9%;
-    border-radius: 22px;
+    border-radius: 25px;
 }
 
 img.pokemon{
